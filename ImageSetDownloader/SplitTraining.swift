@@ -18,9 +18,47 @@ class SplitTraining {
         
     }
     
+    private func copyOut(from folders: [URL], to parentFolderDirectory: URL) {
+        let myFileManager = FileManager.default
+        
+        for folder in folders {
+            let invalidPaths = [dsStoreName]
+            guard !invalidPaths.contains(folder.lastPathComponent) else {
+                continue
+            }
+            
+            let thisOriginalDir = parentFolderDirectory.appendingPathComponent(folder.lastPathComponent, isDirectory: true)
+            try! myFileManager.createDirectory(at: thisOriginalDir, withIntermediateDirectories: true, attributes: nil)
+            
+            let imageURLs: [URL] = try! myFileManager.contentsOfDirectory(at: folder, includingPropertiesForKeys: nil)
+            
+            for image in imageURLs {
+                let newImageLocation = thisOriginalDir.appendingPathComponent(image.lastPathComponent, isDirectory: false)
+                
+                try! myFileManager.moveItem(at: image, to: newImageLocation)
+                
+            }
+            
+            try! myFileManager.removeItem(at: folder)
+        }
+    }
+    
     
     func combineDirectory() {
-    
+        let myFileManager = FileManager.default
+        let parentFolderDirectory = URL(fileURLWithPath: "/Users/zeke/Desktop/test")
+        let trainingDirectory = parentFolderDirectory.appendingPathComponent(trainingDirName, isDirectory: true)
+        let testingDirectory = parentFolderDirectory.appendingPathComponent(testingDirName, isDirectory: true)
+        
+        let testingFolders: [URL] = try! myFileManager.contentsOfDirectory(at: testingDirectory, includingPropertiesForKeys: nil)
+        let trainingFolders: [URL] = try! myFileManager.contentsOfDirectory(at: trainingDirectory, includingPropertiesForKeys: nil)
+        
+        
+        self.copyOut(from: testingFolders, to: parentFolderDirectory)
+        self.copyOut(from: trainingFolders, to: parentFolderDirectory)
+        
+        try! myFileManager.removeItem(at: testingDirectory)
+        try! myFileManager.removeItem(at: trainingDirectory)
     }
     
     func splitDirectory() {

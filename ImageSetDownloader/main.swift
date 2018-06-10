@@ -100,4 +100,5 @@ class MyRequestController {
 
 
 SplitTraining().splitDirectory()
+//SplitTraining().combineDirectory()
 sleep(200)
