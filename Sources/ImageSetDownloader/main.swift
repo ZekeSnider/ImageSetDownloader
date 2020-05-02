@@ -3,7 +3,7 @@ import TSCUtility
 
 let parser = ArgumentParser(commandName: "imagesetdownloader", usage: "filename [--input naughty_words.txt]", overview: "Downloads flickr data sets, splits to training data, or combines to one folder of images.")
 
-let tag = parser.add(option: "--tag", shortName: "-tag", kind: String.self, usage: "A search tag")
+let tag = parser.add(option: "--tag", shortName: "-t", kind: String.self, usage: "A search tag")
 let apiKey = parser.add(option: "--apiKey", shortName: "-a", kind: String.self, usage: "Flickr API Key")
 let path = parser.add(option: "--path", shortName: "-p", kind: PathArgument.self, usage: "Path to download to")
 let maximumRecords = parser.add(option: "--maxRecords", shortName: "-m", kind: Int.self, usage: "Maximum images to download")
@@ -55,7 +55,7 @@ do {
     
     let pathArg = result.get(path)?.path.asURL ?? URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
 
-    if (result.get(combine) == true) {
+    if (result.get(download) == true) {
         guard let tagString = result.get(tag) else {
             throw ParameterError.tagRequired
         }
@@ -64,8 +64,12 @@ do {
         }
         let maximumRecordsInt = result.get(maximumRecords) ?? 500
         
-        FlickrController().downloadImages(of: tagString, to: pathArg, withMaximum: maximumRecordsInt, using: apiKeyString)
-        sleep(200)
+        let sem = DispatchSemaphore(value: 0)
+        FlickrController().downloadImages(of: tagString, to: pathArg, withMaximum: maximumRecordsInt, using: apiKeyString, completion: {() -> Void in
+            print("Completed download!")
+            sem.signal()
+        })
+        sem.wait()
     } else if (result.get(split) == true) {
         SplitTraining().split(parentFolderDirectory: pathArg)
     } else if (result.get(combine) == true) {

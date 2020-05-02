@@ -16,7 +16,7 @@ class FlickrController {
         session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
     }
     
-    func downloadImage(photo: Photo, directory: URL) {
+    func downloadImage(photo: Photo, directory: URL, completion: @escaping ()->()) {
         //format is: https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
         let imageURL = "https://farm\(photo.farm).staticflickr.com/\(photo.server)/\(photo.id)_\(photo.secret).jpg"
         guard let downloadURL = URL(string: imageURL) else { return }
@@ -32,10 +32,11 @@ class FlickrController {
         session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
             do {
                 try data?.write(to: fileURL)
+                print("Downloaded \(photo.id).jpg")
+                completion()
             } catch (let writeError) {
                 print(writeError.localizedDescription)
             }
-            
         }).resume()
     }
     
@@ -100,11 +101,11 @@ class FlickrController {
         }).resume()
     }
     
-    func downloadImages(of tag: String, to directory: String, withMaximum imageCount: Int, using apiKey: String) {
-        downloadImages(of: tag, to: URL(fileURLWithPath: directory), withMaximum: imageCount, using: apiKey)
+    func downloadImages(of tag: String, to directory: String, withMaximum imageCount: Int, using apiKey: String, completion: @escaping ()->()) {
+        downloadImages(of: tag, to: URL(fileURLWithPath: directory), withMaximum: imageCount, using: apiKey, completion: completion)
     }
     
-    func downloadImages(of tag: String, to directory: URL, withMaximum imageCount: Int, using apiKey: String) {
+    func downloadImages(of tag: String, to directory: URL, withMaximum imageCount: Int, using apiKey: String, completion: @escaping ()->()) {
         let localUrl = directory.appendingPathComponent(tag)
         
         do {
@@ -114,9 +115,20 @@ class FlickrController {
             return
         }
         
+        print("Searching for \(imageCount) pictures related to \(tag).")
         searchImage(of: tag, withMaximum: imageCount, using: apiKey, completion: {(photos: [Photo]) -> Void in
+            print("Search complete! Starting downloads")
+            let myGroup = DispatchGroup()
+            
             for photo in photos {
-                self.downloadImage(photo: photo, directory: localUrl)
+                myGroup.enter()
+                self.downloadImage(photo: photo, directory: localUrl, completion: {() -> Void in
+                    myGroup.leave()
+                })
+            }
+            
+            myGroup.notify(queue: DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated)) {
+               completion()
             }
         })
     }
