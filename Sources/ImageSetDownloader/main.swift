@@ -1,7 +1,7 @@
 import Foundation
 import TSCUtility
 
-let parser = ArgumentParser(commandName: "imagesetdownloader", usage: "filename [--input naughty_words.txt]", overview: "Downloads flickr data sets, splits to training data, or combines to one folder of images.")
+let parser = ArgumentParser(commandName: "imagesetdownloader", usage: "--download --tag cats --apiKey myFlickrApiKey --maxRecords 10", overview: "Downloads flickr data sets, splits to training data, or combines to one folder of images.")
 
 let tag = parser.add(option: "--tag", shortName: "-t", kind: String.self, usage: "A search tag")
 let apiKey = parser.add(option: "--apiKey", shortName: "-a", kind: String.self, usage: "Flickr API Key")
