@@ -48,6 +48,7 @@ class SplitTraining {
     }
     
     public func combine(parentFolderDirectory: URL) {
+        print("Combinging folders...")
         let myFileManager = FileManager.default
         let trainingDirectory = parentFolderDirectory.appendingPathComponent(trainingDirName, isDirectory: true)
         let testingDirectory = parentFolderDirectory.appendingPathComponent(testingDirName, isDirectory: true)
@@ -60,6 +61,7 @@ class SplitTraining {
         
         try! myFileManager.removeItem(at: testingDirectory)
         try! myFileManager.removeItem(at: trainingDirectory)
+        print("Done combining folders!")
     }
     
     public func split(directory: String) {
@@ -74,11 +76,17 @@ class SplitTraining {
         let folderURLs: [URL] = try! myFileManager.contentsOfDirectory(at: parentFolderDirectory, includingPropertiesForKeys: nil)
         
         for folder in folderURLs {
+            // We only operate on folders
+            guard folder.hasDirectoryPath else {
+                continue
+            }
             //Skip if this is an invalid filename
             let invalidPaths = [testingDirName, trainingDirName, dsStoreName]
             guard !invalidPaths.contains(folder.lastPathComponent) else {
                 continue
             }
+            
+            print("Splitting \(folder.lastPathComponent)")
             
             //Create testing/training subfolders for this folder
             let thisTrainingDir = trainingDirectory.appendingPathComponent(folder.lastPathComponent, isDirectory: true)
@@ -110,5 +118,6 @@ class SplitTraining {
             //Remove the now empty folder
             try! myFileManager.removeItem(at: folder)
         }
+        print("Done splitting!")
     }
 }
