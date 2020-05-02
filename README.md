@@ -1,6 +1,6 @@
 # ImageSetDownloader
 
-Easily create image classifier ML models without writing any code! This script allows you to download sets of classified images from [Flickr's API](https://www.flickr.com/services/api/), then split/combine to/from training and test folders. The folder structure matches that required by [Apple's Create ML](https://developer.apple.com/documentation/createml). You can drag the resulting folders into CreateML and train your model (or use another framework).
+Easily create image classifier ML models without writing any code! This script allows you to download sets of classified images from [Flickr's API](https://www.flickr.com/services/api/), then split/combine to/from training and test folders. The folder structure matches that required by [Apple's Create ML](https://developer.apple.com/documentation/createml/creating_an_image_classifier_model). You can drag the resulting folders into CreateML and train your model (or use another framework).
 
 ## Examples
 Download 10 pictures of cats
@@ -37,7 +37,7 @@ A Flickr API key. This is required for the download command.
 ### --tag (or -t)
 What to search for. Required for the download command.
 
-## --max (or -m)
+### --max (or -m)
 Maximum number of images to download. If not specified, defaults to 500.
 
 
