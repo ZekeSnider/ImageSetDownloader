@@ -31,7 +31,6 @@
 		B3C7C4A820C787A800C97621 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		B3C7C4AA20C7A66400C97621 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		B3C7C4AC20C7B42600C97621 /* SplitTraining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitTraining.swift; sourceTree = "<group>"; };
-		B3C7C4AE20C7B46400C97621 /* TrainingSet.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TrainingSet.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +66,6 @@
 				B3C7C4A820C787A800C97621 /* extensions.swift */,
 				B3C7C4A120C7831B00C97621 /* main.swift */,
 				B3C7C4AC20C7B42600C97621 /* SplitTraining.swift */,
-				B3C7C4AE20C7B46400C97621 /* TrainingSet.playground */,
 				B3C7C4AA20C7A66400C97621 /* SearchResults.swift */,
 			);
 			path = ImageSetDownloader;

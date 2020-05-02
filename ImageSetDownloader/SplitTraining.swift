@@ -14,7 +14,6 @@ class SplitTraining {
     private let dsStoreName = ".DS_Store"
     private let trainingTestingSplit = 0.8
     
-    
     //Copy contents of the from folders to folders of the same number under
     //the to folder
     private func copyOut(from folders: [URL], to parentFolderDirectory: URL) {
@@ -44,9 +43,9 @@ class SplitTraining {
         }
     }
     
-    public func combineDirectory() {
+    public func combine(directory: String) {
         let myFileManager = FileManager.default
-        let parentFolderDirectory = URL(fileURLWithPath: "/Users/zeke/Desktop/test")
+        let parentFolderDirectory = URL(fileURLWithPath: directory)
         let trainingDirectory = parentFolderDirectory.appendingPathComponent(trainingDirName, isDirectory: true)
         let testingDirectory = parentFolderDirectory.appendingPathComponent(testingDirName, isDirectory: true)
         
@@ -60,9 +59,9 @@ class SplitTraining {
         try! myFileManager.removeItem(at: trainingDirectory)
     }
     
-    public func splitDirectory() {
+    public func split(directory: String) {
         let myFileManager = FileManager.default
-        let parentFolderDirectory = URL(fileURLWithPath: "/Users/zeke/Desktop/test")
+        let parentFolderDirectory = URL(fileURLWithPath: directory)
         let trainingDirectory = parentFolderDirectory.appendingPathComponent(trainingDirName, isDirectory: true)
         let testingDirectory = parentFolderDirectory.appendingPathComponent(testingDirName, isDirectory: true)
         
@@ -107,5 +106,3 @@ class SplitTraining {
         }
     }
 }
-
-
