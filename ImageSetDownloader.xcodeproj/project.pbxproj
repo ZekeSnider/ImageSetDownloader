@@ -3,17 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B3C7C4A220C7831B00C97621 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C7C4A120C7831B00C97621 /* main.swift */; };
-		B3C7C4A920C787A800C97621 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C7C4A820C787A800C97621 /* extensions.swift */; };
-		B3C7C4AB20C7A66400C97621 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C7C4AA20C7A66400C97621 /* SearchResults.swift */; };
-		B3C7C4AD20C7B42600C97621 /* SplitTraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C7C4AC20C7B42600C97621 /* SplitTraining.swift */; };
+		B380D038245D70E400F8FFB7 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B380D034245D70E400F8FFB7 /* extensions.swift */; };
+		B380D039245D70E400F8FFB7 /* SplitTraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = B380D035245D70E400F8FFB7 /* SplitTraining.swift */; };
+		B380D03A245D70E400F8FFB7 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B380D036245D70E400F8FFB7 /* SearchResults.swift */; };
+		B380D03B245D70E400F8FFB7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B380D037245D70E400F8FFB7 /* main.swift */; };
+		B380D04E245DDBD600F8FFB7 /* SwiftPM-auto in Frameworks */ = {isa = PBXBuildFile; productRef = B380D04D245DDBD600F8FFB7 /* SwiftPM-auto */; };
+		B380D050245DDCC500F8FFB7 /* FlickrController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B380D04F245DDCC500F8FFB7 /* FlickrController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		B380D045245DDB5600F8FFB7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3C7C49C20C7831B00C97621 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -26,11 +38,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B380D034245D70E400F8FFB7 /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = extensions.swift; path = Sources/ImageSetDownloader/extensions.swift; sourceTree = SOURCE_ROOT; };
+		B380D035245D70E400F8FFB7 /* SplitTraining.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplitTraining.swift; path = Sources/ImageSetDownloader/SplitTraining.swift; sourceTree = SOURCE_ROOT; };
+		B380D036245D70E400F8FFB7 /* SearchResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResults.swift; path = Sources/ImageSetDownloader/SearchResults.swift; sourceTree = SOURCE_ROOT; };
+		B380D037245D70E400F8FFB7 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = Sources/ImageSetDownloader/main.swift; sourceTree = SOURCE_ROOT; };
+		B380D04F245DDCC500F8FFB7 /* FlickrController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrController.swift; sourceTree = "<group>"; };
 		B3C7C49E20C7831B00C97621 /* ImageSetDownloader */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ImageSetDownloader; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3C7C4A120C7831B00C97621 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		B3C7C4A820C787A800C97621 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
-		B3C7C4AA20C7A66400C97621 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
-		B3C7C4AC20C7B42600C97621 /* SplitTraining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitTraining.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,17 +51,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B380D04E245DDBD600F8FFB7 /* SwiftPM-auto in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B380D042245DDB5600F8FFB7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B3C7C49520C7831B00C97621 = {
 			isa = PBXGroup;
 			children = (
 				B3C7C4A020C7831B00C97621 /* ImageSetDownloader */,
 				B3C7C49F20C7831B00C97621 /* Products */,
+				B380D042245DDB5600F8FFB7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,10 +85,11 @@
 		B3C7C4A020C7831B00C97621 /* ImageSetDownloader */ = {
 			isa = PBXGroup;
 			children = (
-				B3C7C4A820C787A800C97621 /* extensions.swift */,
-				B3C7C4A120C7831B00C97621 /* main.swift */,
-				B3C7C4AC20C7B42600C97621 /* SplitTraining.swift */,
-				B3C7C4AA20C7A66400C97621 /* SearchResults.swift */,
+				B380D034245D70E400F8FFB7 /* extensions.swift */,
+				B380D037245D70E400F8FFB7 /* main.swift */,
+				B380D036245D70E400F8FFB7 /* SearchResults.swift */,
+				B380D04F245DDCC500F8FFB7 /* FlickrController.swift */,
+				B380D035245D70E400F8FFB7 /* SplitTraining.swift */,
 			);
 			path = ImageSetDownloader;
 			sourceTree = "<group>";
@@ -81,12 +104,17 @@
 				B3C7C49A20C7831B00C97621 /* Sources */,
 				B3C7C49B20C7831B00C97621 /* Frameworks */,
 				B3C7C49C20C7831B00C97621 /* CopyFiles */,
+				B380D045245DDB5600F8FFB7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B380D04C245DDBC800F8FFB7 /* PBXTargetDependency */,
 			);
 			name = ImageSetDownloader;
+			packageProductDependencies = (
+				B380D04D245DDBD600F8FFB7 /* SwiftPM-auto */,
+			);
 			productName = ImageSetDownloader;
 			productReference = B3C7C49E20C7831B00C97621 /* ImageSetDownloader */;
 			productType = "com.apple.product-type.tool";
@@ -103,6 +131,7 @@
 				TargetAttributes = {
 					B3C7C49D20C7831B00C97621 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -114,6 +143,9 @@
 				en,
 			);
 			mainGroup = B3C7C49520C7831B00C97621;
+			packageReferences = (
+				B380D02F245D6F4F00F8FFB7 /* XCRemoteSwiftPackageReference "swift-package-manager" */,
+			);
 			productRefGroup = B3C7C49F20C7831B00C97621 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -128,14 +160,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3C7C4A220C7831B00C97621 /* main.swift in Sources */,
-				B3C7C4AB20C7A66400C97621 /* SearchResults.swift in Sources */,
-				B3C7C4AD20C7B42600C97621 /* SplitTraining.swift in Sources */,
-				B3C7C4A920C787A800C97621 /* extensions.swift in Sources */,
+				B380D050245DDCC500F8FFB7 /* FlickrController.swift in Sources */,
+				B380D039245D70E400F8FFB7 /* SplitTraining.swift in Sources */,
+				B380D03A245D70E400F8FFB7 /* SearchResults.swift in Sources */,
+				B380D03B245D70E400F8FFB7 /* main.swift in Sources */,
+				B380D038245D70E400F8FFB7 /* extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B380D04C245DDBC800F8FFB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = B380D04B245DDBC800F8FFB7 /* SwiftPM-auto */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B3C7C4A320C7831B00C97621 /* Debug */ = {
@@ -254,9 +294,16 @@
 		B3C7C4A620C7831B00C97621 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C7LJ587XF3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -264,8 +311,14 @@
 		B3C7C4A720C7831B00C97621 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C7LJ587XF3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -293,6 +346,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B380D02F245D6F4F00F8FFB7 /* XCRemoteSwiftPackageReference "swift-package-manager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-package-manager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B380D04B245DDBC800F8FFB7 /* SwiftPM-auto */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B380D02F245D6F4F00F8FFB7 /* XCRemoteSwiftPackageReference "swift-package-manager" */;
+			productName = "SwiftPM-auto";
+		};
+		B380D04D245DDBD600F8FFB7 /* SwiftPM-auto */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B380D02F245D6F4F00F8FFB7 /* XCRemoteSwiftPackageReference "swift-package-manager" */;
+			productName = "SwiftPM-auto";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B3C7C49620C7831B00C97621 /* Project object */;
 }

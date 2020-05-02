@@ -1,6 +1,14 @@
+//
+//  FlickrController.swift
+//  ImageSetDownloader
+//
+//  Created by Zeke Snider on 5/2/20.
+//  Copyright © 2020 Zeke Snider. All rights reserved.
+//
+
 import Foundation
 
-class MyRequestController {
+class FlickrController {
     let flickrBaseURL = "https://api.flickr.com/services/rest/"
     let session: URLSession
     init() {
@@ -31,11 +39,11 @@ class MyRequestController {
         }).resume()
     }
     
-    func searchImage(of tag: String, withMaximum recordNum: Int, completion: @escaping ([Photo])->()) {
+    func searchImage(of tag: String, withMaximum recordNum: Int, using ApiKey: String, completion: @escaping ([Photo])->()) {
         let perPage = min(500, recordNum)
         
         let URLParams = [
-            "api_key": "",
+            "api_key": ApiKey,
             "tags": tag,
             "method": "flickr.photos.search",
             "format": "json",
@@ -92,7 +100,7 @@ class MyRequestController {
         }).resume()
     }
     
-    func downloadImages(of tag: String, to directory: String, withMaximum imageCount: Int) {
+    func downloadImages(of tag: String, to directory: String, withMaximum imageCount: Int, using apiKey: String) {
         let localUrl = URL(fileURLWithPath: directory).appendingPathComponent(tag)
         
         do {
@@ -102,17 +110,10 @@ class MyRequestController {
             return
         }
         
-        searchImage(of: tag, withMaximum: imageCount, completion: {(photos: [Photo]) -> Void in
+        searchImage(of: tag, withMaximum: imageCount, using: apiKey, completion: {(photos: [Photo]) -> Void in
             for photo in photos {
                 self.downloadImage(photo: photo, directory: localUrl)
             }
         })
     }
 }
-
-//MyRequestController().downloadImages(of: "TaylorSwift", to: "/Users/zeke/Desktop/ImageSetDownloader/ImageSetDownloader/test", withMaximum: 1000)
-
-
-SplitTraining().split(directory: "/Users/zeke/Desktop/ImageSetDownloader/ImageSetDownloader/test")
-//SplitTraining().combine(directory: "/Users/zeke/Desktop/ImageSetDownloader/ImageSetDownloader/test")
-sleep(200)
