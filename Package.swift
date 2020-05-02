@@ -11,6 +11,6 @@ let package = Package(
     targets: [
         .target(
             name: "ImageSetDownloader",
-            dependencies: ["SPMUtility"])
+            dependencies: ["TSCUtility"])
     ]
 )
