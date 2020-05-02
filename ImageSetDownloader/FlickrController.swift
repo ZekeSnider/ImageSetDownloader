@@ -101,7 +101,11 @@ class FlickrController {
     }
     
     func downloadImages(of tag: String, to directory: String, withMaximum imageCount: Int, using apiKey: String) {
-        let localUrl = URL(fileURLWithPath: directory).appendingPathComponent(tag)
+        downloadImages(of: tag, to: URL(fileURLWithPath: directory), withMaximum: imageCount, using: apiKey)
+    }
+    
+    func downloadImages(of tag: String, to directory: URL, withMaximum imageCount: Int, using apiKey: String) {
+        let localUrl = directory.appendingPathComponent(tag)
         
         do {
             try FileManager.default.createDirectory(at: localUrl, withIntermediateDirectories: true)

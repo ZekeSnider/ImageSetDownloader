@@ -64,12 +64,12 @@ do {
         }
         let maximumRecordsInt = result.get(maximumRecords) ?? 500
         
-        FlickrController().downloadImages(of: tagString, to: "/Users/zeke/Desktop/ImageSetDownloader/ImageSetDownloader/test", withMaximum: maximumRecordsInt, using: apiKeyString)
+        FlickrController().downloadImages(of: tagString, to: pathArg, withMaximum: maximumRecordsInt, using: apiKeyString)
         sleep(200)
     } else if (result.get(split) == true) {
-        SplitTraining().split(directory: "/Users/zeke/Desktop/ImageSetDownloader/ImageSetDownloader/test")
+        SplitTraining().split(parentFolderDirectory: pathArg)
     } else if (result.get(combine) == true) {
-        SplitTraining().combine(directory: "/Users/zeke/Desktop/ImageSetDownloader/ImageSetDownloader/test")
+        SplitTraining().combine(parentFolderDirectory: pathArg)
     }
 } catch ArgumentParserError.expectedValue(let value) {
     print("Missing value for argument \(value).")

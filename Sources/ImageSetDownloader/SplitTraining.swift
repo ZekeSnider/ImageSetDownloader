@@ -44,8 +44,11 @@ class SplitTraining {
     }
     
     public func combine(directory: String) {
+        combine(parentFolderDirectory: URL(fileURLWithPath: directory))
+    }
+    
+    public func combine(parentFolderDirectory: URL) {
         let myFileManager = FileManager.default
-        let parentFolderDirectory = URL(fileURLWithPath: directory)
         let trainingDirectory = parentFolderDirectory.appendingPathComponent(trainingDirName, isDirectory: true)
         let testingDirectory = parentFolderDirectory.appendingPathComponent(testingDirName, isDirectory: true)
         
@@ -60,8 +63,11 @@ class SplitTraining {
     }
     
     public func split(directory: String) {
+        split(parentFolderDirectory: URL(fileURLWithPath: directory))
+    }
+    
+    public func split(parentFolderDirectory: URL) {
         let myFileManager = FileManager.default
-        let parentFolderDirectory = URL(fileURLWithPath: directory)
         let trainingDirectory = parentFolderDirectory.appendingPathComponent(trainingDirName, isDirectory: true)
         let testingDirectory = parentFolderDirectory.appendingPathComponent(testingDirName, isDirectory: true)
         
