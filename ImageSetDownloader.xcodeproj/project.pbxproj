@@ -12,7 +12,7 @@
 		B380D03A245D70E400F8FFB7 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B380D036245D70E400F8FFB7 /* SearchResults.swift */; };
 		B380D03B245D70E400F8FFB7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B380D037245D70E400F8FFB7 /* main.swift */; };
 		B380D04E245DDBD600F8FFB7 /* SwiftPM-auto in Frameworks */ = {isa = PBXBuildFile; productRef = B380D04D245DDBD600F8FFB7 /* SwiftPM-auto */; };
-		B380D050245DDCC500F8FFB7 /* FlickrController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B380D04F245DDCC500F8FFB7 /* FlickrController.swift */; };
+		B380D052245E0B5800F8FFB7 /* FlickrController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B380D051245E0B5800F8FFB7 /* FlickrController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,7 +42,7 @@
 		B380D035245D70E400F8FFB7 /* SplitTraining.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplitTraining.swift; path = Sources/ImageSetDownloader/SplitTraining.swift; sourceTree = SOURCE_ROOT; };
 		B380D036245D70E400F8FFB7 /* SearchResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchResults.swift; path = Sources/ImageSetDownloader/SearchResults.swift; sourceTree = SOURCE_ROOT; };
 		B380D037245D70E400F8FFB7 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = Sources/ImageSetDownloader/main.swift; sourceTree = SOURCE_ROOT; };
-		B380D04F245DDCC500F8FFB7 /* FlickrController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrController.swift; sourceTree = "<group>"; };
+		B380D051245E0B5800F8FFB7 /* FlickrController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlickrController.swift; path = Sources/ImageSetDownloader/FlickrController.swift; sourceTree = SOURCE_ROOT; };
 		B3C7C49E20C7831B00C97621 /* ImageSetDownloader */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ImageSetDownloader; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -88,7 +88,7 @@
 				B380D034245D70E400F8FFB7 /* extensions.swift */,
 				B380D037245D70E400F8FFB7 /* main.swift */,
 				B380D036245D70E400F8FFB7 /* SearchResults.swift */,
-				B380D04F245DDCC500F8FFB7 /* FlickrController.swift */,
+				B380D051245E0B5800F8FFB7 /* FlickrController.swift */,
 				B380D035245D70E400F8FFB7 /* SplitTraining.swift */,
 			);
 			path = ImageSetDownloader;
@@ -160,7 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B380D050245DDCC500F8FFB7 /* FlickrController.swift in Sources */,
+				B380D052245E0B5800F8FFB7 /* FlickrController.swift in Sources */,
 				B380D039245D70E400F8FFB7 /* SplitTraining.swift in Sources */,
 				B380D03A245D70E400F8FFB7 /* SearchResults.swift in Sources */,
 				B380D03B245D70E400F8FFB7 /* main.swift in Sources */,
