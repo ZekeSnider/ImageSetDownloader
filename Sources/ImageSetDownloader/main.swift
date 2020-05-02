@@ -6,7 +6,7 @@ let parser = ArgumentParser(commandName: "imagesetdownloader", usage: "--downloa
 let tag = parser.add(option: "--tag", shortName: "-t", kind: String.self, usage: "A search tag")
 let apiKey = parser.add(option: "--apiKey", shortName: "-a", kind: String.self, usage: "Flickr API Key")
 let path = parser.add(option: "--path", shortName: "-p", kind: PathArgument.self, usage: "Path to download to")
-let maximumRecords = parser.add(option: "--maxRecords", shortName: "-m", kind: Int.self, usage: "Maximum images to download")
+let maximumRecords = parser.add(option: "--max", shortName: "-m", kind: Int.self, usage: "Maximum images to download")
 
 let combine = parser.add(option: "--combine",
     shortName: "-c",
